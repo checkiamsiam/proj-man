@@ -1,26 +1,25 @@
 import { PageHeader } from "@/components/common/PageHeader";
+import ProjectList from "@/components/pages/Projects/ProjectList";
 
-const Dashboard = () => {
+const Projects = () => {
   return (
     <div>
       <PageHeader
-        title="Overview"
+        title="Projects List"
         breadcrumbs={[
           {
             title: "Dashboard",
             key: "dashboard",
           },
           {
-            title: "Overview",
+            title: "Projects",
             key: "overview",
           },
         ]}
       />
-      <div>
-        <p className="text-center text-xl">Overview Will Goes Here</p>
-      </div>
+      <ProjectList />
     </div>
   );
 };
 
-export default Dashboard;
+export default Projects;

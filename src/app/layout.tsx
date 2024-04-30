@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Proj Man",
+  title: "ProzMan",
   description: "A project management app",
 };
 
@@ -15,7 +15,7 @@ export default function RootLayout({ children, session }: { children: ReactNode;
     <html lang="en">
       <body>
         <Providers session={session}>
-          <NProgressBar  height={2} />
+          <NProgressBar height={2} />
           {children}
         </Providers>
       </body>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Proj Man | Dashboard",
+  title: "ProzMan | Dashboard",
   description: "A project management app",
 };
 

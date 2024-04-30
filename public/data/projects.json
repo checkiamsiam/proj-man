@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "E-commerce Website Development",
+    "description": "Develop an e-commerce website for our online store."
+  },
+  {
+    "id": 2,
+    "name": "Marketing Campaign",
+    "description": "Plan and execute a marketing campaign for our new product launch."
+  },
+  {
+    "id": 3,
+    "name": "Inventory Management System",
+    "description": "Build a system to manage inventory across multiple warehouses."
+  },
+  {
+    "id": 4,
+    "name": "Mobile Game Development",
+    "description": "Create an addictive mobile game for iOS and Android platforms."
+  },
+  {
+    "id": 5,
+    "name": "Customer Relationship Management (CRM) System",
+    "description": "Develop a CRM system to manage customer interactions and data."
+  },
+  {
+    "id": 6,
+    "name": "Social Media Management",
+    "description": "Manage social media accounts and campaigns for our brand."
+  }
+]

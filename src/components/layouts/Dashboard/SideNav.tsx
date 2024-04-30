@@ -52,7 +52,7 @@ const SideNav = ({ ...others }: SideNavProps) => {
           marginBottom: "1rem",
         }}
       >
-        Proj Man
+        ProzMan
       </Typography>
       <ConfigProvider>
         <Menu mode="inline" items={items} onClick={onClick} selectedKeys={[current]} style={{ border: "none" }} />

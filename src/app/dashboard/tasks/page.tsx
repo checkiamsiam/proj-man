@@ -1,26 +1,26 @@
 import { PageHeader } from "@/components/common/PageHeader";
 
-const Dashboard = () => {
+const Tasks = () => {
   return (
     <div>
       <PageHeader
-        title="Overview"
+        title="Task Manager"
         breadcrumbs={[
           {
             title: "Dashboard",
             key: "dashboard",
           },
           {
-            title: "Overview",
+            title: "Tasks",
             key: "overview",
           },
         ]}
       />
       <div>
-        <p className="text-center text-xl">Overview Will Goes Here</p>
+        <p className="text-center text-xl">Tasks Will Goes Here</p>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default Tasks;
