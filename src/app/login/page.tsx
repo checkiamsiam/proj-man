@@ -1,10 +1,9 @@
-
-import LoginForm from '@/components/pages/Login/LoginForm';
+import LoginForm from "@/components/pages/Login/LoginForm";
 
 const LoginPage = () => {
   return (
-    <div className='bg-blue-400 min-h-screen  flex justify-center items-center'>
-      <LoginForm/>
+    <div className="min-h-screen bg-blue-300 flex justify-center items-center">
+      <LoginForm />
     </div>
   );
 };
