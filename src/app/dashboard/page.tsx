@@ -1,9 +1,22 @@
-import React from 'react';
+import { PageHeader } from "@/components/common/PageHeader";
 
 const Dashboard = () => {
   return (
     <div>
-      <h1>Dashboard</h1>
+      <PageHeader
+        title="Overview"
+        breadcrumbs={[
+          {
+            title: "Dashboard",
+            key: "dashboard",
+          },
+          {
+            title: "Overview",
+            path: "/",
+            key: "overview",
+          },
+        ]}
+      />
     </div>
   );
 };
