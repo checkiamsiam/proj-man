@@ -22,7 +22,7 @@ export async function middleware(request: NextRequest) {
 
 
   if (!session || managerAuthRoutes || userAuthRoutes) {
-    return NextResponse.redirect("/login");
+    return NextResponse.redirect(new URL("/login", request.nextUrl))
   }
 
  
@@ -30,8 +30,8 @@ export async function middleware(request: NextRequest) {
 }
 
 // See "Matching Paths" below to learn more
-// all routes except /api, /_next/static, /_next/image, /favicon.ico, /_next/data, /_next/server-side-rendering, /_next/webpack-hmr, /img
+// all routes except /api, /_next/static, /_next/image, /favicon.ico, /_next/data, /_next/server-side-rendering, /_next/webpack-hmr, /img , /login
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|_next/data|_next/server-side-rendering|_next/webpack-hmr|img).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|_next/data|_next/server-side-rendering|_next/webpack-hmr|img|login).*)"],
 };
