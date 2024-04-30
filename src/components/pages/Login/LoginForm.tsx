@@ -14,7 +14,6 @@ const LoginForm = () => {
   const { data: session } = useSession();
   const router = useRouter();
   const [error, setError] = useState<boolean>(false);
-  console.log(session);
   const submitHandler = async (data: any) => {
     message.loading("Login.....");
     try {
