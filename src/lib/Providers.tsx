@@ -6,7 +6,14 @@ import { ReactNode } from "react";
 import StyledComponentsRegistry from "./AntdRegistry";
 import BrowserActivityProvider from "./BrowserActivityProvider";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: false,
+    },
+  },
+})
 
 const Providers = ({ children, session }: { children: ReactNode; session: NextAuthSession }) => {
   return (

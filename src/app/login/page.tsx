@@ -1,10 +1,12 @@
 
-const Login = () => {
+import LoginForm from '@/components/pages/Login/LoginForm';
+
+const LoginPage = () => {
   return (
-    <div>
-      <h1>Login</h1>
+    <div className='bg-blue-400 min-h-screen  flex justify-center items-center'>
+      <LoginForm/>
     </div>
   );
 };
 
-export default Login;
+export default LoginPage;

@@ -8,7 +8,6 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const session: any = await getToken({ req: request, secret: envConfig.jwt.secret });
-
  
   const role = session?.user?.role;
 
@@ -17,9 +16,8 @@ export async function middleware(request: NextRequest) {
   const isUser = role === UserRole.user;
 
 
-  const managerAuthRoutes = session && !isManager && pathname.startsWith("/manager-dashboard");
-  const userAuthRoutes = session && !isUser && pathname.startsWith("/dashboard");
-
+  const managerAuthRoutes = session && !isManager && pathname.startsWith("/dashboard");
+  const userAuthRoutes = session && !isUser && pathname.startsWith("/user");
 
   if (!session || managerAuthRoutes || userAuthRoutes) {
     return NextResponse.redirect(new URL("/login", request.nextUrl))

@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  
+*{
+  border-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 

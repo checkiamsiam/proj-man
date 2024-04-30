@@ -63,7 +63,11 @@ const providers: Provider[] = [
 
         const { data } = await loginWithCredential({ email, password });
 
-        const verifiedToken: any = jwtHelpers.verifyToken(data?.accessToken as string, envConfig.jwt.secret);
+        console.log(data);
+
+        const verifiedToken: any = await jwtHelpers.verifyToken(data?.accessToken as string, envConfig.jwt.secret);
+
+        console.log(verifiedToken);
         // If no error and we have user data, return it
         if (data?.accessToken && verifiedToken) {
           return {
