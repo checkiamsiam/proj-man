@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "projectId": 1,
+    "title": "Design Homepage Layout",
+    "description": "Create a visually appealing layout for the homepage.",
+    "status": "in-progress",
+    "dueDate": "2024-05-15",
+    "assigneeId": 1
+  },
+  {
+    "id": 2,
+    "projectId": 2,
+    "title": "Implement Payment Gateway",
+    "description": "Integrate a secure payment gateway for online transactions.",
+    "status": "to-do",
+    "dueDate": "2024-05-20",
+    "assigneeId": 2
+  },
+  {
+    "id": 3,
+    "projectId": 3,
+    "title": "Add Product Search Functionality",
+    "description": "Implement search functionality to allow users to search for products.",
+    "status": "to-do",
+    "dueDate": "2024-05-25",
+    "assigneeId": 3
+  },
+  {
+    "id": 4,
+    "projectId": 4,
+    "title": "Create Marketing Strategy",
+    "description": "Develop a comprehensive marketing strategy for the campaign.",
+    "status": "in-progress",
+    "dueDate": "2024-06-01",
+    "assigneeId": 4
+  },
+  {
+    "id": 5,
+    "projectId": 5,
+    "title": "Backend Development",
+    "description": "Develop backend services for the CRM system.",
+    "status": "to-do",
+    "dueDate": "2024-06-10",
+    "assigneeId": 5
+  },
+  {
+    "id": 6,
+    "projectId": 6,
+    "title": "Create Social Media Content Calendar",
+    "description": "Plan and schedule social media posts for the next month.",
+    "status": "to-do",
+    "dueDate": "2024-06-15",
+    "assigneeId": 6
+  },
+  {
+    "id": 7,
+    "projectId": 1,
+    "title": "Optimize Homepage Performance",
+    "description": "Improve loading times and performance of the homepage.",
+    "status": "to-do",
+    "dueDate": "2024-06-20",
+    "assigneeId": 7
+  },
+  {
+    "id": 8,
+    "projectId": 2,
+    "title": "Create Marketing Collateral",
+    "description": "Design marketing materials for the campaign.",
+    "status": "in-progress",
+    "dueDate": "2024-06-25",
+    "assigneeId": 1
+  },
+  {
+    "id": 9,
+    "projectId": 3,
+    "title": "Implement Barcode Scanning",
+    "description": "Integrate barcode scanning functionality for inventory management.",
+    "status": "in-progress",
+    "dueDate": "2024-07-01",
+    "assigneeId": 2
+  },
+  {
+    "id": 10,
+    "projectId": 4,
+    "title": "Level Design",
+    "description": "Design levels and gameplay mechanics for the mobile game.",
+    "status": "to-do",
+    "dueDate": "2024-07-05",
+    "assigneeId": 3
+  },
+  {
+    "id": 11,
+    "projectId": 5,
+    "title": "Client Data Import",
+    "description": "Implement functionality to import client data into the CRM system.",
+    "status": "in-progress",
+    "dueDate": "2024-07-10",
+    "assigneeId": 4
+  },
+  {
+    "id": 12,
+    "projectId": 6,
+    "title": "Create Social Media Ads",
+    "description": "Design and create advertisements for social media platforms.",
+    "status": "to-do",
+    "dueDate": "2024-07-15",
+    "assigneeId": 5
+  },
+  {
+    "id": 13,
+    "projectId": 1,
+    "title": "Implement Product Filtering",
+    "description": "Add filtering options for products on the homepage.",
+    "status": "in-progress",
+    "dueDate": "2024-07-20",
+    "assigneeId": 6
+  },
+  {
+    "id": 14,
+    "projectId": 2,
+    "title": "Launch Email Campaign",
+    "description": "Create and launch an email campaign to promote the product.",
+    "status": "to-do",
+    "dueDate": "2024-07-25",
+    "assigneeId": 7
+  },
+  {
+    "id": 15,
+    "projectId": 3,
+    "title": "Warehouse Integration",
+    "description": "Integrate inventory management system with warehouse systems.",
+    "status": "to-do",
+    "dueDate": "2024-08-01",
+    "assigneeId": 1
+  },
+  {
+    "id": 16,
+    "projectId": 4,
+    "title": "Character Animation",
+    "description": "Create animations for game characters.",
+    "status": "in-progress",
+    "dueDate": "2024-08-05",
+    "assigneeId": 2
+  },
+  {
+    "id": 17,
+    "projectId": 5,
+    "title": "Lead Management",
+    "description": "Implement lead management functionality in the CRM system.",
+    "status": "to-do",
+    "dueDate": "2024-08-10",
+    "assigneeId": 3
+  },
+  {
+    "id": 18,
+    "projectId": 6,
+    "title": "Schedule Social Media Posts",
+    "description": "Schedule upcoming social media posts for the week.",
+    "status": "in-progress",
+    "dueDate": "2024-08-15",
+    "assigneeId": 4
+  },
+  {
+    "id": 19,
+    "projectId": 1,
+    "title": "Optimize Checkout Process",
+    "description": "Streamline the checkout process for better user experience.",
+    "status": "to-do",
+    "dueDate": "2024-08-20",
+    "assigneeId": 5
+  },
+  {
+    "id": 20,
+    "projectId": 2,
+    "title": "Create Landing Page",
+    "description": "Design and develop a landing page for the product launch.",
+    "status": "to-do",
+    "dueDate": "2024-08-25",
+    "assigneeId": 6
+  }
+]

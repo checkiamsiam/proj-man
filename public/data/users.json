@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "role": "Developer"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "role": "Designer"
+  },
+  {
+    "id": 3,
+    "name": "Alex Johnson",
+    "email": "alex.johnson@example.com",
+    "role": "QA Engineer"
+  },
+  {
+    "id": 4,
+    "name": "Emily Brown",
+    "email": "emily.brown@example.com",
+    "role": "Marketing Manager"
+  },
+  {
+    "id": 5,
+    "name": "Michael Lee",
+    "email": "michael.lee@example.com",
+    "role": "Project Manager"
+  },
+  {
+    "id": 6,
+    "name": "Sarah Wilson",
+    "email": "sarah.wilson@example.com",
+    "role": "Content Creator"
+  },
+  {
+    "id": 7,
+    "name": "David Clark",
+    "email": "david.clark@example.com",
+    "role": "Social Media Manager"
+  }
+]

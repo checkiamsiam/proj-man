@@ -2,31 +2,37 @@
   {
     "id": 1,
     "name": "E-commerce Website Development",
+    "slug": "e-commerce-website-development",
     "description": "Develop an e-commerce website for our online store.Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store. Develop an e-commerce website for our online store."
   },
   {
     "id": 2,
     "name": "Marketing Campaign",
+    "slug": "marketing-campaign",
     "description": "Plan and execute a marketing campaign for our new product launch. Plan and execute a marketing campaign for our new product launch. Plan and execute a marketing campaign for our new product launch. Plan and execute a marketing campaign for our new product launch. Plan and execute a marketing campaign for our new product launch. Plan and execute a marketing campaign for our new product launch. Plan and execute a marketing campaign for our new product launch. Plan and execute a marketing campaign for our new product launch. Plan and execute a marketing campaign for our new product launch. Plan and execute a marketing campaign for our new product launch.Plan and execute a marketing campaign for our new product launch. Plan and execute a marketing campaign for our new product launch."
   },
   {
     "id": 3,
     "name": "Inventory Management System",
+    "slug": "inventory-management-system",
     "description": "Build a system to manage inventory across multiple warehouses. Build a system to manage inventory across multiple warehouses. Build a system to manage inventory across multiple warehouses. Build a system to manage inventory across multiple warehouses. Build a system to manage inventory across multiple warehouses. Build a system to manage inventory across multiple warehouses. Build a system to manage inventory across multiple warehouses. Build a system to manage inventory across multiple warehouses. Build a system to manage inventory across multiple warehouses. Build a system to manage inventory across multiple warehouses. "
   },
   {
     "id": 4,
     "name": "Mobile Game Development",
+    "slug": "mobile-game-development",
     "description": "Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. "
   },
   {
     "id": 5,
     "name": "Customer Relationship Management (CRM) System",
+    "slug": "customer-relationship-management-crm-system",
     "description": "Develop a CRM system to manage customer interactions and data.Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. "
   },
   {
     "id": 6,
     "name": "Social Media Management",
+    "slug": "social-media-management",
     "description": "Manage social media accounts and campaigns for our brand.Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. Create an addictive mobile game for iOS and Android platforms. "
   }
 ]
