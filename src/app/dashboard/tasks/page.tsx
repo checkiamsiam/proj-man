@@ -88,8 +88,8 @@ const Tasks = () => {
             <div>
               <p>
                 Filter:{" "}
-                {team?.map((member: any) => {
-                  return <span className="hover:text-blue-600 cursor-pointer">{member.name} | </span>;
+                {team?.map((member: any , i:number) => {
+                  return <span key={i} className="hover:text-blue-600 cursor-pointer">{member.name} | </span>;
                 })}
               </p>
             </div>
