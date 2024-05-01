@@ -97,7 +97,7 @@ export default function TaskManager() {
             const tasks = column.taskIds.map((taskId: any) => state.tasks[taskId]);
 
             return (
-              <Col xs={24} md={8}>
+              <Col xs={24} md={8} key={columnId}>
                 <Column key={column.id} column={column} tasks={tasks} />{" "}
               </Col>
             );
@@ -107,31 +107,3 @@ export default function TaskManager() {
     </DragDropContext>
   );
 }
-const initialData = {
-  tasks: {
-    1: { id: 1, content: "Configure Next.js application" },
-    2: { id: 2, content: "Configure Next.js , tailwind , Chakra-UI" },
-    3: { id: 3, content: "Create sidebar navigation menu and header" },
-    4: { id: 4, content: "Create page Main Body" },
-    5: { id: 5, content: "Create Todo Func" },
-  },
-  columns: {
-    "to-do": {
-      id: "to-do",
-      title: "TO-DO",
-      taskIds: [1, 2, 3, 4, 5],
-    },
-    "in-progress": {
-      id: "in-progress",
-      title: "IN-PROGRESS",
-      taskIds: [],
-    },
-    completed: {
-      id: "completed",
-      title: "UNDER REVIEW",
-      taskIds: [],
-    },
-  },
-  // Facilitate reordering of the columns
-  columnOrder: ["to-do", "in-progress", "completed"],
-};
