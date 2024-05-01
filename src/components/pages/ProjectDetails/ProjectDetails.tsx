@@ -54,6 +54,7 @@ const ProjectDetails = () => {
                         pageSize: 3,
                         align: "center",
                       }}
+                      key={data?.team?.id}
                       dataSource={data?.team}
                       loading={isLoading}
                       renderItem={(item: any) => (
@@ -97,7 +98,7 @@ const ProjectDetails = () => {
           <Col xs={24} md={8} xl={6}>
             <Row>
               <Col span={24}>
-                <Card loading={isLoading} title="Recent Activities" actions={[<Button>Explore more</Button>]}>
+                <Card loading={isLoading} title="Recent Activities" >
                   <ul>
                     {
                       data?.tasks.map((task: any) => (

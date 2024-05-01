@@ -1,4 +1,3 @@
-
 import { UserRole } from "@/constants/Enums";
 import { DefaultSession } from "next-auth";
 
@@ -13,3 +12,4 @@ declare module "next-auth" {
     };
   }
 }
+ts;

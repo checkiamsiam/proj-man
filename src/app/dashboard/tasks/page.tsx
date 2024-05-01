@@ -1,6 +1,15 @@
+"use client";
 import { PageHeader } from "@/components/common/PageHeader";
+import SelectProject from "@/components/form/SelectProject";
+import TaskManager from "@/components/pages/Tasks/TaskManager";
+import useTaskStore from "@/stores/taskManagerStore";
+import { Col, Row } from "antd";
 
 const Tasks = () => {
+  const { setActiveSlug , activeSlug } = useTaskStore();
+  const handleChange = (value: string) => {
+    setActiveSlug(value);
+  };
   return (
     <div>
       <PageHeader
@@ -17,8 +26,13 @@ const Tasks = () => {
         ]}
       />
       <div>
-        <p className="text-center text-xl">Tasks Will Goes Here</p>
+        <Row justify="end">
+          <Col xs={24} md={8}>
+            <SelectProject size="large" handleChange={handleChange} />
+          </Col>
+        </Row>
       </div>
+      <div className="mt-5">{activeSlug && <TaskManager />}</div>
     </div>
   );
 };
