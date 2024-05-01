@@ -118,7 +118,7 @@ const ProjectList = () => {
 
   return (
     <div>
-      <Table loading={isLoading} columns={columns} dataSource={projects} pagination={false} className="overflow-auto w-full" />
+      <Table loading={isLoading} columns={columns}  dataSource={projects} pagination={false} className="overflow-auto w-full" />
       <Modal title="Edit Project" open={open} confirmLoading={confirmLoading} onCancel={handleCancel} footer={false}>
         <Form submitHandler={handleEdit} defaultValues={editableData}>
           <FormInput label="Name" name="name" size="large" />
