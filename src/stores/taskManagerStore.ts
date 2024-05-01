@@ -6,8 +6,8 @@ interface TaskStore {
   projectWiseInitialTasks: { slug: any; state: any }[];
   setProjectWiseInitialTasks: (projectWiseInitialTasks: any) => void;
   editProjectWiseInitialTasks: (slug: any, payload: any) => void;
-  // addTaskToProject: (slug: number, data: any) => void;
-  // EditTaskInProject: (slug: number, data: any) => void;
+  addTaskToProject: (slug: any, data: any) => void;
+  EditTaskInProject: (slug: any, id: any, payload: any) => void;
 }
 
 const useTaskStore = create<TaskStore>((set) => ({
@@ -67,6 +67,56 @@ const useTaskStore = create<TaskStore>((set) => ({
       const updatedData = { slug: slug, state: payload };
 
       const updatedProjects = state.projectWiseInitialTasks.map((project) => (project.slug === slug ? updatedData : project));
+
+      return { projectWiseInitialTasks: updatedProjects };
+    });
+  },
+  addTaskToProject: (slug: any, data: any) => {
+    set((state) => {
+      const project = state.projectWiseInitialTasks.find((item) => item.slug === slug);
+      const updated = {
+        slug: slug,
+        state: {
+          columnOrder: ["to-do", "in-progress", "completed"],
+          tasks: {
+            ...project?.state?.tasks,
+            [data.id]: data,
+          },
+          columns: {
+            ...project?.state.columns,
+            "to-do": {
+              ...project?.state.columns["to-do"],
+              taskIds: [...project?.state?.columns["to-do"]?.taskIds, data.id],
+            },
+          },
+        },
+      };
+
+      const updatedProjects = state.projectWiseInitialTasks.map((project) => (project.slug === slug ? updated : project));
+
+      return { projectWiseInitialTasks: updatedProjects };
+    });
+  },
+  EditTaskInProject: (slug: any, id: any, payload: any) => {
+    set((state) => {
+      const updatedProjects = state.projectWiseInitialTasks.map((project) => {
+        if (project.slug === slug) {
+          // Find the task to edit
+          const updatedTask = { ...project.state.tasks[id], ...payload };
+          // Update the tasks object with the edited task
+          const updatedTasks = { ...project.state.tasks, [id]: updatedTask };
+
+          return {
+            slug: slug,
+            state: {
+              ...project.state,
+              tasks: updatedTasks,
+            },
+          };
+        } else {
+          return project;
+        }
+      });
 
       return { projectWiseInitialTasks: updatedProjects };
     });
