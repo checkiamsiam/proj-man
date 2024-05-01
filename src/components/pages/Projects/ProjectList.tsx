@@ -2,14 +2,16 @@
 import { useRouter } from "@/lib/router-events";
 import { getAllProjects } from "@/service/project/getProjects";
 import useProjectStore from "@/stores/projectsStore";
-import { InfoCircleOutlined } from "@ant-design/icons";
+import { ExclamationCircleFilled, InfoCircleOutlined } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
-import { Button, Dropdown, Table, TableColumnProps } from "antd";
+import { Button, Dropdown, Modal, Table, TableColumnProps } from "antd";
+
+const { confirm } = Modal;
 
 const ProjectList = () => {
   const router = useRouter();
-  const { projects, setProjects , deleteProject } = useProjectStore();
-  const { data, isLoading } = useQuery({
+  const { projects, setProjects, deleteProject } = useProjectStore();
+  const { isLoading } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
       const res = await getAllProjects();
@@ -18,7 +20,21 @@ const ProjectList = () => {
     },
   });
 
+  const showDeleteConfirm = (data: number) => {
+    confirm({
+      title: "Are you sure delete this Project?",
+      icon: <ExclamationCircleFilled />,
+      content: "Some descriptions",
+      okText: "Yes",
+      okType: "danger",
+      cancelText: "No",
+      onOk() {
+        deleteProject(data);
+      },
+    });
+  };
 
+  console.log(projects);
 
   const columns: TableColumnProps<any>[] = [
     { title: "ID", dataIndex: "id" },
@@ -38,7 +54,7 @@ const ProjectList = () => {
               <Button size="small" onClick={() => router.push(`/dashboard/projects/edit/${data}`)}>
                 edit
               </Button>
-              <Button size="small" onClick={() => deleteProject(data)}>
+              <Button size="small" onClick={() => showDeleteConfirm(data)}>
                 Delete
               </Button>
             </div>
@@ -60,7 +76,7 @@ const ProjectList = () => {
                       key: "delete",
                       label: "Delete",
                       danger: true,
-                      onClick: () => deleteProject(data),
+                      onClick: () => showDeleteConfirm(data),
                     },
                   ],
                 }}
