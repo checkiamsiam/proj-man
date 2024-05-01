@@ -7,25 +7,30 @@ import FormTextArea from "@/components/form/FormTextArea";
 import FormUserSelect from "@/components/form/FormUserSelect";
 import SelectProject from "@/components/form/SelectProject";
 import TaskManager from "@/components/pages/Tasks/TaskManager";
-import { getAllTasks } from "@/service/tasks/getAllTask";
+import { getSingleProject } from "@/service/project/getProjectDetails";
 import useTaskStore from "@/stores/taskManagerStore";
 import { useQuery } from "@tanstack/react-query";
-import users from "../../../../public/data/users.json";
 import { Button, Col, Modal, Row } from "antd";
 import { useState } from "react";
+import users from "../../../../public/data/users.json";
 
 const Tasks = () => {
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const { setActiveSlug, activeSlug, addTaskToProject } = useTaskStore();
+  const { setActiveSlug, activeSlug, addTaskToProject, projectWiseInitialTasks } = useTaskStore();
+  const state = projectWiseInitialTasks.find((item) => item.slug === activeSlug)?.state;
 
   const { data } = useQuery({
-    queryKey: ["tasks"],
+    queryKey: ["project", activeSlug],
     queryFn: async () => {
-      const res = await getAllTasks();
+      const res = await getSingleProject(activeSlug as string);
       return res;
     },
   });
+
+  const team = data?.team;
+
+  console.log(data?.team);
 
   const handleChange = (value: string) => {
     setActiveSlug(value);
@@ -44,9 +49,9 @@ const Tasks = () => {
     const payload = {
       ...data,
       id: data?.data?.length + 1,
-      dueDate : data?.dueDate?.format("YYYY-MM-DD"),
+      dueDate: data?.dueDate?.format("YYYY-MM-DD"),
       status: "to-do",
-      assignee : users.find((user) => user.id === data.assigneeId)
+      assignee: users.find((user) => user.id === data.assigneeId),
     };
 
     addTaskToProject(activeSlug, payload);
@@ -76,10 +81,18 @@ const Tasks = () => {
           </Col>
         </Row>
         {activeSlug && (
-          <div>
+          <div className="sm:flex justify-between items-center mt-5">
             <Button type="primary" onClick={showModal}>
               Add Task
             </Button>
+            <div>
+              <p>
+                Filter:{" "}
+                {team?.map((member: any) => {
+                  return <span className="hover:text-blue-600 cursor-pointer">{member.name} | </span>;
+                })}
+              </p>
+            </div>
           </div>
         )}
       </div>
