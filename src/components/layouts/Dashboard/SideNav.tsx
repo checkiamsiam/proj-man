@@ -1,3 +1,4 @@
+"use client"
 import { Link } from "@/lib/router-events";
 import { BranchesOutlined, InfoCircleOutlined, ProductOutlined } from "@ant-design/icons";
 import { ConfigProvider, Layout, Menu, MenuProps, SiderProps, Typography } from "antd";

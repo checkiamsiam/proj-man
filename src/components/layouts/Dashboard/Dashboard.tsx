@@ -3,6 +3,7 @@ import { useRouter } from "@/lib/router-events";
 import { signOut } from "@/service/auth/signOut";
 import { LogoutOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Flex, FloatButton, Layout, MenuProps, Tooltip, message, theme } from "antd";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -125,7 +126,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
             <Flex align="center" gap="small">
               <Dropdown menu={{ items }} trigger={["click"]} className="cursor-pointer">
                 <Flex>
-                  <img src="/imgs/me.jpg" alt="user profile photo" height={36} width={36} style={{ borderRadius, objectFit: "cover" }} />
+                  <Image src="/imgs/me.jpg" alt="user profile photo" height={36} width={36} style={{ borderRadius, objectFit: "cover" }} />
                 </Flex>
               </Dropdown>
             </Flex>

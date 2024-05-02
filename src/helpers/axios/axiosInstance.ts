@@ -1,10 +1,10 @@
 import { accessToken_key } from "@/constants/localstorageKeys";
-import { signOut } from "@/service/auth/signOut";
 import { getFromCookie } from "@/utils/browserStorage/cookiestorage";
 import axios from "axios";
+import { signOut } from "next-auth/react";
 
 const axiosInstance = axios.create({
-  // baseURL: envConfig.backendUrl,
+  baseURL: "https://proj-man.vercel.app/",
 });
 axiosInstance.defaults.headers.post["Content-Type"] = "application/json";
 axiosInstance.defaults.headers["Accept"] = "application/json";
@@ -34,7 +34,7 @@ axiosInstance.interceptors.response.use(
   },
   async function (error: any) {
     if (error?.response?.status === 401 || error?.response?.status === 403) {
-      await signOut();
+      await signOut({ redirect: false });
     }
     const responseObject: any = {
       error: {

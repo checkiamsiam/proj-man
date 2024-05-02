@@ -26,11 +26,11 @@ const Tasks = () => {
       const res = await getSingleProject(activeSlug as string);
       return res;
     },
+    enabled: !!activeSlug,
   });
 
   const team = data?.team;
 
-  console.log(data?.team);
 
   const handleChange = (value: string) => {
     setActiveSlug(value);

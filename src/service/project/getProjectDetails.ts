@@ -25,6 +25,6 @@ export const getSingleProject = async (slug: string) => {
 
     return project;
   } catch (error: any) {
-    throw new Error(error?.response?.data?.message || "Internal Server Error");
+    return null
   }
 };

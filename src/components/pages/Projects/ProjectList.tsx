@@ -19,7 +19,9 @@ const ProjectList = () => {
     queryKey: ["projects"],
     queryFn: async () => {
       const res = await getAllProjects();
-      setProjects(res.data);
+      if(!!res){
+        setProjects(res.data);
+      }
       return res;
     },
   });
@@ -78,7 +80,7 @@ const ProjectList = () => {
               <Button size="small" onClick={() => showModal(data)}>
                 edit
               </Button>
-              <Button size="small" onClick={() => showDeleteConfirm(data.id)}>
+              <Button size="small" onClick={() => showDeleteConfirm(data?.id)}>
                 Delete
               </Button>
             </div>

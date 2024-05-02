@@ -5,6 +5,6 @@ export const getAllUsers = async () => {
     const res = await axiosInstance.get(`/data/users.json`);
     return res;
   } catch (error: any) {
-    throw new Error(error?.response?.data?.message || "Internal Server Error");
+    return null
   }
 };

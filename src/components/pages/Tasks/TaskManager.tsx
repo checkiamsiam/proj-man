@@ -27,7 +27,9 @@ export default function TaskManager() {
     queryKey: [`project-${activeSlug}`],
     queryFn: async () => {
       const res = await getSingleProject(activeSlug as string);
-      setProjectWiseInitialTasks(res);
+      if(!!res){
+        setProjectWiseInitialTasks(res);
+      }
       return res;
     },
   });
