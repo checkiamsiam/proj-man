@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm install",
-    "start": "node server.js",
+    "build": "next build",
+    "start": "next start",
+    "custom-start": "node server.js",
     "lint": "next lint"
   },
   "dependencies": {
