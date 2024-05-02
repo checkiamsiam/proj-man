@@ -1,29 +1,11 @@
-"use client"
-import { Link } from "@/lib/router-events";
+"use client";
+import { useRouter } from "@/lib/router-events";
 import { BranchesOutlined, InfoCircleOutlined, ProductOutlined } from "@ant-design/icons";
-import { ConfigProvider, Layout, Menu, MenuProps, SiderProps, Typography } from "antd";
+import { Layout, Menu, MenuProps, SiderProps, Typography } from "antd";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const { Sider } = Layout;
-
-type MenuItem = Required<MenuProps>["items"][number];
-
-const getItem = (label: React.ReactNode, key: React.Key, icon?: React.ReactNode, children?: MenuItem[], type?: "group"): MenuItem => {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  } as MenuItem;
-};
-
-const items: MenuProps["items"] = [
-  getItem(<Link href="/dashboard">Overview</Link>, "dashboard", <InfoCircleOutlined />),
-  getItem(<Link href="/dashboard/projects">Projects</Link>, "projects", <ProductOutlined />),
-  getItem(<Link href="/dashboard/tasks">Tasks</Link>, "tasks", <BranchesOutlined />),
-];
 
 type SideNavProps = SiderProps;
 
@@ -31,9 +13,11 @@ const SideNav = ({ ...others }: SideNavProps) => {
   const nodeRef = useRef(null);
   const pathname = usePathname();
   const [current, setCurrent] = useState("");
+  const router = useRouter();
 
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("click ", e);
+    router.push(e.key);
   };
 
   useEffect(() => {
@@ -55,9 +39,28 @@ const SideNav = ({ ...others }: SideNavProps) => {
       >
         ProzMan
       </Typography>
-      <ConfigProvider>
-        <Menu mode="inline" items={items} onClick={onClick} selectedKeys={[current]} style={{ border: "none" }} />
-      </ConfigProvider>
+      <Menu
+        mode="inline"
+        onClick={onClick}
+        style={{ border: "none" }}
+        items={[
+          {
+            label: "Overview",
+            key: "/dashboard",
+            icon: <InfoCircleOutlined />,
+          },
+          {
+            label: "Projects",
+            key: "/dashboard/projects",
+            icon: <ProductOutlined />,
+          },
+          {
+            label: "Tasks",
+            key: "/dashboard/tasks",
+            icon: <BranchesOutlined />,
+          },
+        ]}
+      />
     </Sider>
   );
 };

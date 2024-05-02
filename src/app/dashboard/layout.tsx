@@ -1,4 +1,4 @@
-import { AppLayout } from "@/components/layouts/Dashboard";
+import DashboardLayout from "@/components/layouts/Dashboard";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return <AppLayout>{children}</AppLayout>;
+  return <DashboardLayout>{children}</DashboardLayout>;
 }

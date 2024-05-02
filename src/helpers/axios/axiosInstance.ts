@@ -4,7 +4,7 @@ import axios from "axios";
 import { signOut } from "next-auth/react";
 
 const axiosInstance = axios.create({
-  baseURL: "https://proj-man.vercel.app/",
+  // baseURL: "https://proj-man.vercel.app/",
 });
 axiosInstance.defaults.headers.post["Content-Type"] = "application/json";
 axiosInstance.defaults.headers["Accept"] = "application/json";

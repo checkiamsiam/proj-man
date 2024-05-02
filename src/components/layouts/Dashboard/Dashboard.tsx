@@ -70,6 +70,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
           backgroundColor: "white",
           overflow: "hidden",
         }}
+        hasSider
       >
         <SideNav
           trigger={null}
