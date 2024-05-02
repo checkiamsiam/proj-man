@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "@/lib/router-events";
+import { Link, useRouter } from "@/lib/router-events";
 import { BranchesOutlined, InfoCircleOutlined, ProductOutlined } from "@ant-design/icons";
 import { Layout, Menu, MenuProps, SiderProps, Typography } from "antd";
 import { usePathname } from "next/navigation";
@@ -16,7 +16,6 @@ const SideNav = ({ ...others }: SideNavProps) => {
   const router = useRouter();
 
   const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
     router.push(e.key);
   };
 
@@ -41,21 +40,20 @@ const SideNav = ({ ...others }: SideNavProps) => {
       </Typography>
       <Menu
         mode="inline"
-        onClick={onClick}
         style={{ border: "none" }}
         items={[
           {
-            label: "Overview",
+            label: <Link href={`/dashboard`}>Overview</Link>,
             key: "/dashboard",
             icon: <InfoCircleOutlined />,
           },
           {
-            label: "Projects",
+            label: <Link href={`/dashboard/projects`}>Projects</Link>,
             key: "/dashboard/projects",
             icon: <ProductOutlined />,
           },
           {
-            label: "Tasks",
+            label: <Link href={`/dashboard/tasks`}>Tasks</Link>,
             key: "/dashboard/tasks",
             icon: <BranchesOutlined />,
           },
