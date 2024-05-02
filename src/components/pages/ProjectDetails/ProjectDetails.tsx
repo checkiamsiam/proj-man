@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "@/lib/router-events";
 import { getSingleProject } from "@/service/project/getProjectDetails";
+import useModalStore from "@/stores/modalsStore";
 import useTaskStore from "@/stores/taskManagerStore";
 import { useQuery } from "@tanstack/react-query";
 import { Button, Card, Col, Flex, List, Row, Typography } from "antd";
@@ -11,6 +12,7 @@ const { Title, Text, Paragraph } = Typography;
 const ProjectDetails = () => {
   const router = useRouter();
   const params = useParams();
+  const { setOpen } = useModalStore();
   const { setActiveSlug, activeSlug } = useTaskStore();
   const { data, isLoading } = useQuery({
     queryKey: ["project", params.projectSlug],
@@ -24,11 +26,18 @@ const ProjectDetails = () => {
     setActiveSlug(params.projectSlug as string);
     router.push(`/dashboard/tasks`);
   };
+  const handleAddTask = () => {
+    setActiveSlug(params.projectSlug as string);
+    setOpen(true);
+    router.push(`/dashboard/tasks`);
+  };
 
   return (
     <div>
       <div className="flex flex-wrap gap-5">
-        <Button type="primary">Add Task</Button>
+        <Button type="primary" onClick={handleAddTask}>
+          Add Task
+        </Button>
         <Button type="primary" onClick={handleView}>
           View Tasks
         </Button>

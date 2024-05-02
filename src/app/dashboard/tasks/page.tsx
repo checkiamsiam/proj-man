@@ -8,6 +8,7 @@ import FormUserSelect from "@/components/form/FormUserSelect";
 import SelectProject from "@/components/form/SelectProject";
 import TaskManager from "@/components/pages/Tasks/TaskManager";
 import { getSingleProject } from "@/service/project/getProjectDetails";
+import useModalStore from "@/stores/modalsStore";
 import useTaskStore from "@/stores/taskManagerStore";
 import { useQuery } from "@tanstack/react-query";
 import { Button, Col, Modal, Row } from "antd";
@@ -15,7 +16,7 @@ import { useState } from "react";
 import users from "../../../../public/data/users.json";
 
 const Tasks = () => {
-  const [open, setOpen] = useState(false);
+  const { open, setOpen } = useModalStore();
   const [confirmLoading, setConfirmLoading] = useState(false);
   const { setActiveSlug, activeSlug, addTaskToProject, projectWiseInitialTasks } = useTaskStore();
   const state = projectWiseInitialTasks.find((item) => item.slug === activeSlug)?.state;
@@ -30,7 +31,6 @@ const Tasks = () => {
   });
 
   const team = data?.team;
-
 
   const handleChange = (value: string) => {
     setActiveSlug(value);
@@ -85,14 +85,18 @@ const Tasks = () => {
             <Button type="primary" onClick={showModal}>
               Add Task
             </Button>
-            <div>
+            {/* <div>
               <p>
                 Filter:{" "}
-                {team?.map((member: any , i:number) => {
-                  return <span key={i} className="hover:text-blue-600 cursor-pointer">{member.name} | </span>;
+                {team?.map((member: any, i: number) => {
+                  return (
+                    <span key={i} className="hover:text-blue-600 cursor-pointer">
+                      {member.name} |{" "}
+                    </span>
+                  );
                 })}
               </p>
-            </div>
+            </div> */}
           </div>
         )}
       </div>
